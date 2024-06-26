@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 # Importing functions from calculator_1.py
 from calculator_1 import add, subtract, multiply, divide
 a = 10
