@@ -1,19 +1,16 @@
 #!/usr/bin/python3
-def main(argv):
-    num_args = len(argv)
-    
-    # Print number of arguments and whether it's singular or plural
-    if num_args == 0:
-        print(f"Number of argument(s).")
-        print(".")
-    else:
-        print(f"Number of argument{'s' if num_args > 1 else ''}: {num_args}")
-        print(":")
-        
-        # Print each argument with its position
-        for i in range(num_args):
-            print(f"{i + 1}: {argv[i]}")
-    
+from sys import argv
+
 if __name__ == "__main__":
-    # Call main function with command-line arguments excluding script name
-    main(sys.argv[1:])
+    num_of_args = len(argv) - 1
+    if num_of_args > 0:
+        if num_of_args == 1:
+            print("{} argument:".format(num_of_args))
+        else:
+            print("{} arguments:".format(num_of_args))
+        values = 1
+        for arg in argv[1:]:
+            print("{}: {}".format(values, arg))
+            values += 1
+    else:
+        print("{} arguments.".format(num_of_args))
