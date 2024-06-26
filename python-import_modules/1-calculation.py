@@ -1,11 +1,15 @@
-#!/usr/bin/python3
-if __name__ == "__main__":
-    from calculator_1 import add, sub, mul, div
-    if TRUE:
-        a = 10
-        b = 5
+# Importing functions from calculator_1.py
+from calculator_1 import add, subtract, multiply, divide
+a = 10
+b = 5
 
-        print("{} + {} =".format(a, b), add(a, b))
-        print("{} - {} =".format(a, b), sub(a, b))
-        print("{} * {} =".format(a, b), mul(a, b))
-        print("{} / {} =".format(a, b), div(a, b))
+result_add = add(a, b)
+result_subtract = subtract(a, b)
+result_multiply = multiply(a, b)
+result_divide = divide(a, b)
+
+print(f"Sum of {a} and {b} is: {result_add}")
+print(f"Difference of {a} and {b} is: {result_subtract}")
+print(f"Product of {a} and {b} is: {result_multiply}")
+print(f"Division of {a} by {b} is: {result_divide}")
+
