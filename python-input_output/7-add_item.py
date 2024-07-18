@@ -1,5 +1,4 @@
 #!/usr/bin/python3
-<<<<<<< HEAD
 # script that adds all arguments to a Python list,
 # and then save them to a file
 """
@@ -20,7 +19,6 @@ if _name_ == "_main_":
         items = []
     items.extend(sys.argv[1:])
     save_to_json_file(items, "add_item.json")
-=======
 """adds all arguments to a Python list, and after that save them to a file:"""
 
 
@@ -40,4 +38,3 @@ if __name__ == "__main__":
     for idx in range(1, argc):
         loadFile.append(sys.argv[idx])
     save_to_json_file(loadFile, "add_item.json")
->>>>>>> 591afb0a6b8550932c25ed7b2e34500ce02894dd
