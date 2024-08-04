@@ -2,8 +2,6 @@
 """
 Lists all State objects and corresponding City objects contained in the DB
 """
-
-
 import sys
 from relationship_state import Base, State
 from relationship_city import City

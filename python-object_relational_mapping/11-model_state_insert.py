@@ -1,9 +1,7 @@
 #!/usr/bin/python3
 """
-Program adds the State object "Lousiana" to the database hbtn_0e_6_usa
+Adds the State object "Lousiana" to the database hbtn_0e_6_usa
 """
-
-
 import sys
 from model_state import Base, State
 from sqlalchemy import create_engine
