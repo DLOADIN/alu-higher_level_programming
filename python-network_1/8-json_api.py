@@ -1,27 +1,26 @@
 #!/usr/bin/python3
-"""
-Python script that sends a POST request to the URL and
-to an URL with the letter as a parameter
-"""
+"""Documented now"""
 import requests
 import sys
 
-
-if __name__ == "__main__":
-    data = {'q': ""}
-
+if __name__ == '__main__':
     try:
-        data['q'] = sys.argv[1]
-    except:
-        pass
-
-    r = requests.post('http://0.0.0.0:5000/search_user', data)
-
+        params = sys.argv[1]
+    except IndexError:
+        params = ""
+    response = requests.post(
+        "http://0.0.0.0:5000/search_user",
+        data={"q": params}
+    )
     try:
-        json_o = r.json()
-        if not json_o:
-            print("No result")
-        else:
-            print("[{}] {}".format(json_o.get('id'), json_o.get('name')))
+        json_response = response.json()
+        if response.headers.get("Content-Type") == 'application/json':
+            if len(json_response) > 0:
+                print("[{}] {}".format(
+                    json_response["id"],
+                    json_response["name"])
+                )
+            else:
+                print("No result")
     except:
         print("Not a valid JSON")

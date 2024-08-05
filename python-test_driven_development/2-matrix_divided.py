@@ -1,17 +1,9 @@
 #!/usr/bin/python3
-""" A function that divs a martix with a number """
-'''
-File_name: 2-matrix_divided.py
-Created: 4-DEC-2023
-Author: UMUTONI Kevine (simplykevine)
-Size: Large
-Project: python-test_driven_development
-Status: Not yet submitted.
-'''
+"""matix divided"""
 
 
 def matrix_divided(matrix, div):
-    """"A function that divs a martix with a number"""
+    """"matrix divided"""
     if not isinstance(matrix, (list,)):
         raise TypeError("matrix must be a matrix "
                         "(list of lists) of integers/floats")
@@ -23,18 +15,18 @@ def matrix_divided(matrix, div):
             if not isinstance(item, (int, float)):
                 raise TypeError("matrix must be a matrix"
                                 " (list of lists) of integers/floats")
-    row_size = len(matrix[0])
+    common_size = len(matrix[0])
     for row in matrix:
-        if len(row) != row_size:
+        if len(row) != common_size:
             raise TypeError("Each row of the matrix must have the same size")
     if not isinstance(div, (int, float)):
         raise TypeError("div must be a number")
     if div == 0:
         raise ZeroDivisionError("division by zero")
 
-    mat_new = []
+    new_matrix = []
     for i in range(len(matrix)):
-        mat_new.append(list())
+        new_matrix.append(list())
         for j in range(len(matrix[i])):
-            mat_new[i].append(round(matrix[i][j] / div, 2))
-    return mat_new
+            new_matrix[i].append(round(matrix[i][j] / div, 2))
+    return new_matrix

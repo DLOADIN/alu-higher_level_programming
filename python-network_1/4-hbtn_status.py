@@ -1,10 +1,11 @@
 #!/usr/bin/python3
-"""
-Python script that fetches https://alu-intranet.hbtn.io/status
+"""Fetches url
+using the request moduel
 """
 import requests
 
-if __name__ == '__main__':
+
+if __name__ == "__main__":
     url = 'https://intranet.hbtn.io/status'
     if url.startswith('https://'):
         url = "https://alu-intranet.hbtn.io/status"
